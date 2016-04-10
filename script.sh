@@ -2,9 +2,9 @@
 echo "Please enter the name of the channel you wish to download:"
 read ChannelName
 echo "You entered: $ChannelName for the channel"
-sleep 1
+sleep .000001
 echo "Now downloading all videos from Channel "$ChannelName" (if it exists!)"
-youtube-dl -iw --no-continue ytuser:$ChannelName --add-metadata -f bestvideo+bestaudio --merge-output-format mkv -o $ChannelName/"[%(upload_date)s] %(title)s"
+youtube-dl -iw --no-continue ytuser:$ChannelName --download-archive $ChannelName/archive.txt --add-metadata -f bestvideo+bestaudio --merge-output-format mkv -o $ChannelName/"[%(upload_date)s] %(title)s"
 #cd $ChannelName
 #for f in ./*.mkv; do
 #touch -r "$f" "${f%.mkv}".attributes
