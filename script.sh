@@ -12,33 +12,29 @@ do
 
         esac
 done
-
-
 if [[ $URL == "" || $DIR == "" ]] ;
         then
                 echo "You need to input a URL and a directory to which to download, numbnuts."
                 exit 1
         else
 
+
 echo "You entered: $URL for the URL"
-sleep 1
-foo="$(echo $URL | grep 'user\/.*\|channel\/.*' -o | cut -b 1-100)"
-echo "foo=$foo"
-echo "Now downloading all videos from URL "$URL" to the folder "$DIR/$foo""
-
+uploader="$(youtube-dl -i -J $URL --playlist-items 1 | grep -Po '(?<="uploader": ")[^"]*')"
+uploader_id="$(youtube-dl -i -J $URL --playlist-items 1 | grep -Po '(?<="uploader_id": ")[^"]*')"
+uploaderandid="$uploader{$uploader_id}"
+echo "Uploader: $uploader"
+echo "Uploader ID: $uploader_id"
+echo "Folder Name: $uploaderandid"
+echo "Now downloading all videos from URL "$URL" to the folder "$DIR/$uploaderandid""
 cd $DIR || mkdir -p $DIR && cd $DIR
-cd $foo || mkdir -p $foo && cd $foo
-
+cd $uploaderandid || mkdir -p $uploaderandid && cd $uploaderandid
 youtube-dl -iw \
 --no-continue $URL \
 -f bestvideo+bestaudio --merge-output-format mkv \
--o "%(uploader)s{%(uploader_id)s}:[%(upload_date)s] %(title)s" \
+-o "[%(upload_date)s] %(title)s" \
 --add-metadata --download-archive archive.txt
-
-
 fi
-
-
 #cd $ChannelName
 #for f in ./*.mkv; do
 #touch -r "$f" "${f%.mkv}".attributes

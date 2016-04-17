@@ -25,6 +25,9 @@ or
 https://www.youtube.com/user/thesqrtminus1
 
 
+This script will download all videos from channel -u into directory -d/uploader{uploader_id}
+
+
 The reason I chose to allow channel IDs is because not every YouTube channel has chose to make a custom url as a username.
 Some people just leave it at the default, which means that their channel is only accessible via the URL with a channel ID in it.
 Which is annoying.
