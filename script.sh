@@ -27,10 +27,10 @@ echo "Uploader ID: $uploader_id"
 echo "Folder Name: $uploaderandid"
 echo "Now downloading all videos from URL "$URL" to the folder "$DIR/$uploaderandid""
 cd $DIR && cd "$uploaderandid" || mkdir -p $DIR && cd $DIR && mkdir -p "$uploaderandid" && cd "$uploaderandid"
-#youtube-dl -iw \
-#--no-continue $URL \
-#-f bestvideo+bestaudio --merge-output-format mkv \
-#-o "[%(upload_date)s] %(title)s" \
-#--add-metadata --download-archive archive.txt
+youtube-dl -iw \
+--no-continue $URL \
+-f bestvideo+bestaudio --merge-output-format mkv \
+-o "[%(upload_date)s] %(title)s" \
+--add-metadata --download-archive archive.txt
 fi
-#exit 0
+exit 0
