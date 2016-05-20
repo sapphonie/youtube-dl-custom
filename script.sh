@@ -32,11 +32,6 @@ echo "You entered: $URL for the URL"
 fi
 echo "Now downloading all videos from URL "$URL" to the folder "$DIR/$uploaderandid""
 cd $DIR && cd "$uploaderandid" || mkdir -p $DIR && cd $DIR && mkdir -p "$uploaderandid" && cd "$uploaderandid"
-youtube-dl -iw \
---no-continue $URL \
--f bestvideo+bestaudio --merge-output-format mkv \
--o "[%(upload_date)s] %(title)s" --prefer-ffmpeg --recode-video mp4 \
---add-metadata --download-archive archive.txt \
---postprocessor-args "-c:v libx264 -crf 18 -preset medium -strict experimental -c:a aac -movflags +faststart -loglevel 32"
+youtube-dl -iw --no-continue $URL -f bestvideo+bestaudio --merge-output-format mkv -o "[%(upload_date)s] %(title)s" --prefer-ffmpeg --recode-video mp4 --add-metadata --download-archive archive.txt --postprocessor-args "-c:v libx264 -crf 18 -preset medium -strict experimental -c:a aac -movflags +faststart"
 fi
 exit 0
