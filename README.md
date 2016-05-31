@@ -23,7 +23,7 @@ You can NOT run multiple versions of this script to the same directory at the sa
 
 #CHANGELOG:
 
--fuck you-
+~fuck you~
 
 (05/31/16)
 * Made a changelog
