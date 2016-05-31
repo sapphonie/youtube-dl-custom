@@ -3,7 +3,7 @@
 
 Okay, so here's how this thing works:
 
-USAGE:
+#USAGE:
 
 bash script.sh -u -d (-n)
 
@@ -15,25 +15,17 @@ This script will download all videos from url <-u> into directory <-d>/uploader{
 
 
 
-BUGS:
+#BUGS:
 
-```
-                 \   / 
-                 .\-/. 
-             /\  () ()  /\ 
-            /  \ /~-~\ /  \ 
-                y  Y  V 
-          ,-^-./   |   \,-^-.
-         /    {    |    }    \
-               \   |   / 
-               /\  A  /\ 
-              /  \/ \/  \ 
-             /           \
+(05/31/16)
+You can NOT run multiple versions of this script to the same directory at the same time. Although this is more of a bug with youtube-dl, but, whatever
 
 
-       / .'
- .---. \/
-(._.' \()
- ^"""^"
+#CHANGELOG:
 
-```
+-fuck you-
+
+(05/31/16)
+* Made a changelog
+* updated postprocessor args and youtube-dl ffmpeg stuff to get the highest quality possible (for me, at least)
+
