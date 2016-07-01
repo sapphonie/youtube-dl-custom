@@ -1,5 +1,5 @@
 #!/bin/bash
-while getopts :u:h:d:n: option
+while getopts :u:hd:n: option
 do
         case "${option}"
                 in
@@ -15,7 +15,7 @@ do
 done
 if [[ $URL == "" || $DIR == "" ]] ;
         then
-                echo "You need to input a URL and a directory to which to download, numbnuts."
+                echo "Try ./script -h"
                 exit 1
         else
 echo "You entered: $URL for the URL"
