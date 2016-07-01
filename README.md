@@ -23,9 +23,10 @@ You can NOT run multiple versions of this script to the same directory at the sa
 
 ##CHANGELOG:
 
-~~fuck you~~
-
 (05/31/16)
 * Made a changelog
 * updated postprocessor args and youtube-dl ffmpeg stuff to get the highest quality possible (for me, at least)
 
+(07/01/16)
+* fixed getopts behavior, now when specifying -h, you don't need an arg.
+* Also changed default echo without any args at all
