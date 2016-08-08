@@ -34,3 +34,6 @@ You can NOT run multiple versions of this script to the same directory at the sa
 (07/31/16)
 * changed ffmpeg threads to autodetect number of cores
 * added quotes to places where there should have been quotes already
+
+(08/07/16)
+* added .gitignore
