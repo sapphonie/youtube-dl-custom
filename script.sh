@@ -31,7 +31,7 @@ echo "You entered: $URL for the URL"
 		echo "Folder Name: $uploaderandid"
 fi
 echo "Now downloading all videos from URL "$URL" to the folder "$DIR/$uploaderandid""
-cd $DIR && cd "$uploaderandid" || mkdir -p $DIR && cd $DIR && mkdir -p "$uploaderandid" && cd "$uploaderandid"
-youtube-dl -iw --no-continue $URL -f bestvideo+bestaudio --add-metadata --merge-output-format mp4 -o "[%(upload_date)s] %(title)s" --prefer-ffmpeg --download-archive archive.txt --postprocessor-args "-strict -2 -threads 8 -c:v libx264 -crf 18 -preset veryslow -c:a aac -b:a 192k -movflags +faststart"
+cd "$DIR" && cd "$uploaderandid" || mkdir -p "$DIR" && cd "$DIR" && mkdir -p "$uploaderandid" && cd "$uploaderandid"
+youtube-dl -iw --no-continue "$URL" -f bestvideo+bestaudio --add-metadata --merge-output-format mp4 -o "[%(upload_date)s] %(title)s" --prefer-ffmpeg --download-archive archive.txt --postprocessor-args "-strict -2 -threads $(getconf _NPROCESSORS_ONLN) -c:v libx264 -crf 18 -preset veryslow -c:a aac -b:a 192k -movflags +faststart"
 fi
 exit 0

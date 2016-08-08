@@ -30,3 +30,7 @@ You can NOT run multiple versions of this script to the same directory at the sa
 (07/01/16)
 * fixed getopts behavior, now when specifying -h, you don't need an arg.
 * Also changed default echo without any args at all
+
+(07/31/16)
+* changed ffmpeg threads to autodetect number of cores
+* added quotes to places where there should have been quotes already
